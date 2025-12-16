@@ -1,28 +1,28 @@
 ﻿#include "app.h"
 
 /*
-  Variant 20
+  Variant 36
 
- sin^3.2(a-x)
+ tg(2 a − sin bx)
  -------------
- b + x^-1.7
+ x ln|2 − x|
 
- a = 7.23, b = 3.43, x = 5.22
+ a = 3.71, b = 5.22, x = -4.08
 
  */
 
 int main()
 {
-	double a = 7.23, b = 3.43, x = 5.22;
+    double a = 3.71, b = 5.22, x = -4.08;
 
-	double t1 = sin(a - x);
+    double t1 = tan(2 * a - sin(b * x));
 
-	double t2 = pow(x, -1.7);
+    double t2 = x * log(fabs(2 - x));
 
-	double result = pow(t1, 3.2) / (b + t2);
+    double result = t1 / t2;
 
-	printf("sin^3.2(%.3f-%.3f)\n------------------------ = %.3f", a, x, result);
-	printf("\n%.3f + %.3f^-1.7", b, x);
+    printf("tg(2*%.2f - sin(%.2f*%.2f))\n----------------------------- = %.3f", a, b, x, result);
+    printf("\n%.2f * ln|2 - %.2f|", x, x);
 
-	return 0;
+    return 0;
 }

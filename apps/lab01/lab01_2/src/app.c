@@ -1,37 +1,32 @@
 ﻿#include "app.h"
 
-// Variant 20
-
-// sin^3.2(a-x)
-// -------------
-//   b + x^-1.7
-// a > x, x > 0
+// Variant 36
+// tg(2 a - sin bx) / (x ln|2 - x|)
+// a = 3.71, b = 5.22, x = -4.08
 
 int main()
 {
-	double a, b, x;
+    double a, b, x;
 
-	printf("Enter a, b, x:");
+    printf("Enter a, b, x:");
 
-	int ret = scanf("%lf %lf %lf", &a, &b, &x);
+    int ret = scanf("%lf %lf %lf", &a, &b, &x);
 
-	if (ret != 3)
-	{
-		printf("Error! Cannot read 3 arguments but only %d\n", ret);
-		return -1;
-	}
+    if (ret != 3)
+    {
+        printf("Error! Cannot read 3 arguments but only %d\n", ret);
+        return -1;
+    }
 
-	printf("\n");
+    printf("\n");
 
-	double t1 = sin(a - x);
+    double t1 = tan(2 * a - sin(b * x));
 
-	double t2 = pow(x, -1.7);
+    double t2 = x * log(fabs(2 - x));
 
-	double result = pow(t1, 3.2) / (b + t2);
+    double result = t1 / t2;
 
-	printf("sin^3.2(%.3f-%.3f)\n------------------------ = %.3f", a, x, result);
-	
-	printf("\n%.3f + %.3f^-1.7", b, x);
+    printf("tg(2a - sin(bx)) / (x * ln|2 - x|) = %.6f\n", result);
 
-	return 0;
+    return 0;
 }

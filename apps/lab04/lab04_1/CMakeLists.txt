@@ -1,5 +1,9 @@
-project(lab04_1)
+project("lab04_1")
 
-add_executable(lab04_1 src/app.c)
+include_directories(include)
 
-target_include_directories(lab04_1 PUBLIC include)
+file(GLOB SRC "src/*.c")
+
+add_executable(${PROJECT_NAME} ${SRC})
+
+target_link_libraries(${PROJECT_NAME} ${COMMON_DEPS} divisors)

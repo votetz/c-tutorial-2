@@ -1,13 +1,9 @@
-#include <stdio.h>
-#define N 10
-
-int calc_divisor_sum(int num);
-void process_array(int arr[], int size);
-void print_array(const int arr[], int size);
+#include "app.h"
+#include "divisors.h" 
 
 int main()
 {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     int a[N];
     int i;
@@ -25,30 +21,4 @@ int main()
     print_array(a, N);
 
     return 0;
-}
-
-int calc_divisor_sum(int num) {
-    int sum = 0;
-    int d;
-    for (d = 1; d <= num; ++d) {
-        if (num % d == 0) {
-            sum += d;
-        }
-    }
-    return sum;
-}
-
-void process_array(int arr[], int size) {
-    int i;
-    for (i = 0; i < size; ++i) {
-        arr[i] = calc_divisor_sum(arr[i]);
-    }
-}
-
-void print_array(const int arr[], int size) {
-    int i;
-    for (i = 0; i < size; ++i) {
-        printf("%d\t", arr[i]);
-    }
-    printf("\n");
 }

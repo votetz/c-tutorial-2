@@ -2,4 +2,5 @@
 add_subdirectory("time-utils")
 add_subdirectory("balls")
 add_subdirectory("roots")
-	
+add_subdirectory("divisors")
+add_subdirectory("matrix")	

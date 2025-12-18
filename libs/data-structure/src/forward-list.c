@@ -39,7 +39,7 @@ int remove_all_if(P_FORWARD_LIST source, forward_node_predicate pred)
     return 0;
 }
 
-P_FORWARD_LIST find_first_if(P_FORWARD_LIST source, forward_node_predicate)
+P_FORWARD_LIST find_first_if(P_FORWARD_LIST source, forward_node_predicate predicate)
 {
     return NULL;
 }

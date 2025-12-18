@@ -39,7 +39,7 @@ int main()
         // &
         int* pa = &a;
 
-        printf("sizeof(pa)=%lu\n", sizeof(pa));
+        printf("sizeof(p)=%zu\n", sizeof(pa));
 
         printf("Direct value=%d\n", a);
         printf("Pointer=%p, pointed value=%d\n", pa, *pa);
@@ -56,7 +56,7 @@ int main()
         // &
         double* pa = &a;
 
-        printf("sizeof(p)=%lu\n", sizeof(pa));
+        printf("sizeof(p)=%zu\n", sizeof(pa));
 
         printf("Direct value=%.3f\n", a);
         printf("Pointer=%p, pointed value=%.3f\n", pa, *pa);

@@ -6,7 +6,7 @@ long date_to_timestamp(char* date)
     struct tm tm = {0};
 
     strptime(date, DATE_TIME_FORMAT, &tm);
-
+     
     tm.tm_hour = 0;
     tm.tm_min  = 0;
     tm.tm_sec  = 0;

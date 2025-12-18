@@ -1,40 +1,32 @@
 ﻿#include "app.h"
 
-// Variant 20
-
-// sin^3.2(a-x)
-// -------------
-//   b + x^-1.7
-// a > x, x > 0
-
-#define PI 3.1415926
-
-#define SIN(a, x) sin((a) - (x))
-#define POW(x) pow((x), -1.7)
-
-#define EXPR(x, a, b) pow(SIN(a, x), 3.2)/((b) + POW(x))
+// Variant 19
+// x * cos^2(a - x) / (bx + 1)
+// a = 7.23, b = 4.18, x = 6.27
 
 int main()
 {
-	double a, b, x;
+    double a, b, x;
 
-	printf("Enter a, b, x:");
+    printf("Enter a, b, x:");
 
-	int ret = scanf("%lf %lf %lf", &a, &b, &x);
+    int ret = scanf("%lf %lf %lf", &a, &b, &x);
 
-	if (ret != 3)
-	{
-		printf("Error! Cannot read 3 arguments but only %d\n", ret);
-		return -1;
-	}
+    if (ret != 3)
+    {
+        printf("Error! Cannot read 3 arguments but only %d\n", ret);
+        return -1;
+    }
 
-	printf("\n");
+    printf("\n");
 
-	double result = EXPR(x, a, b);
+    double t1 = x * pow(cos(a - x), 2);
 
-	printf("sin^3.2(%.3f-%.3f)\n------------------------ = %.3f", a, x, result);
-	
-	printf("\n%.3f + %.3f^-1.7", b, x);
+    double t2 = b * x + 1;
 
-	return 0;
+    double result = t1 / t2;
+
+    printf("x * cos^2(a - x) / (bx + 1) = %.6f\n", result);
+
+    return 0;
 }
